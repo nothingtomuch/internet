@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Something Good I guess?</h1>
+    <h1 class="time">Time is: </h1>
+    <script defer>
+        var currentDate = new Date()
+        var time = document.getElementsByClassName("time")[0]
+        console.log(Date.now())
+        if(currentDate.getMinutes() > 9 && currentDate.getHours() > 12){
+            time.innerHTML = currentDate.getHours()-12 + ":" + currentDate.getMinutes() + " PM";
+        }else if(currentDate.getMinutes() < 9 && currentDate.getHours() <= 12){
+            time.innerHTML = currentDate.getHours()-12 + ":" + "0" + currentDate.getMinutes() + " AM";
+        }else if(currentDate.getMinutes() > 9 && currentDate.getHours() <= 12){
+            time.innerHTML = currentDate.getHours()-12 + ":" + "0" + currentDate.getMinutes() + " PM";
+        }else{
+            time.innerHTML = currentDate.getHours()-12 + ":" +  currentDate.getMinutes() + " AM";
+        }
+        
+
+        document.body.append(time)
+    </script>
+</body>
+</html>
